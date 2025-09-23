@@ -5,6 +5,7 @@ import '../../features/alert/screens/alert_screen.dart';
 import '../../features/game/screens/game_screen.dart';
 import '../../features/home/screens/home_screen.dart';
 import '../../features/instruction/screens/instruction_screen.dart';
+import '../../features/level/screens/level_screen.dart';
 import '../../features/menu/screens/menu_screen.dart';
 import '../../features/mode/screens/mode_screen.dart';
 import '../../features/privacy/screens/privacy_policy_screen.dart';
@@ -73,6 +74,10 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
       path: AppRoutes.mode.path,
       builder: (context, state) => const ModeScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.level.path,
+      builder: (context, state) => const LevelScreen(),
     ),
     GoRoute(
       path: AppRoutes.game.path,

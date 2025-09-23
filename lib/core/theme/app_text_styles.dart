@@ -9,6 +9,7 @@ abstract class AppTextStyles {
     color: AppColors.white,
     fontWeight: FontWeight.w400,
     fontSize: 75.sp,
+    letterSpacing: 0,
   );
 
   static TextStyle loadingSecondaryTextStyle = GoogleFonts.rubikMonoOne(
@@ -17,6 +18,14 @@ abstract class AppTextStyles {
     foreground: Paint()
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2.sp
-      ..color = AppColors.borderColor,
+      ..color = AppColors.borderPrimaryColor,
+    letterSpacing: 0,
+  );
+
+  static TextStyle primaryTextStyle = GoogleFonts.rubikMonoOne(
+    color: AppColors.white,
+    fontWeight: FontWeight.w400,
+    fontSize: 25.sp,
+    letterSpacing: 0,
   );
 }

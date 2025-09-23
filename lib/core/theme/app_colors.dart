@@ -3,7 +3,11 @@ import 'package:flutter/material.dart';
 abstract class AppColors {
   static Color white = Color(0xFFFFFFFF);
 
-  static Color borderColor = Color(0xFF7A025A);
+  static Color borderPrimaryColor = Color(0xFF7A025A);
+  static Color borderSecondaryColor = Color(0xFF9D3103);
+
+  static Color transparentObjectColor = Color.fromRGBO(122, 2, 90, 0.8);
+  static Color borderTransparentObjectColor = Color(0xFFFF6CD8);
 
   static Color gradientHorizontalStart = Color(0xFFFF2B00);
   static Color gradientVerticalStart = Color(0xFFFF790C);
