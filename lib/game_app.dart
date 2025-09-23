@@ -9,12 +9,11 @@ class GameApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(395, 812),
+      designSize: const Size(1080, 1920),
       child: MaterialApp.router(
         title: 'Flutter Demo',
         routerConfig: appRouter,
         theme: ThemeData(
-          fontFamily: 'Rubik Mono One',
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
       ),

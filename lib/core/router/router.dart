@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../features/alert/screens/alert_screen.dart';
@@ -10,9 +11,28 @@ import '../../features/privacy/screens/privacy_policy_screen.dart';
 import '../../features/settings/screens/settings_screen.dart';
 import '../../features/terms/screens/terms_of_use_screen.dart';
 import '../../features/welcome/screens/welcome_screen.dart';
+import '../blocs/loading_cubit/cubit_listenable.dart';
+import '../blocs/loading_cubit/loading_cubit.dart';
+import '../di/di.dart';
 import 'app_routes.dart';
 
 final GoRouter appRouter = GoRouter(
+  initialLocation: AppRoutes.welcome.path,
+  refreshListenable: getIt<CubitListenable<LoadingState>>(),
+  redirect: (BuildContext context, GoRouterState state) {
+    final cubit = getIt<LoadingCubit>();
+    final isSplash = state.uri.toString() == AppRoutes.welcome.path;
+
+    if (cubit.state.isLoading!) {
+      return isSplash ? null : AppRoutes.welcome.path;
+    }
+
+    if (isSplash) {
+      return AppRoutes.home.path;
+    }
+    return null;
+  },
+
   routes: [
     GoRoute(
       path: AppRoutes.welcome.path,
@@ -20,7 +40,15 @@ final GoRouter appRouter = GoRouter(
     ),
     GoRoute(
       path: AppRoutes.home.path,
-      builder: (context, state) => const HomeScreen(),
+      pageBuilder: (context, state) {
+        return CustomTransitionPage(
+          key: state.pageKey,
+          child: const HomeScreen(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(opacity: animation, child: child);
+          },
+        );
+      },
     ),
     GoRoute(
       path: AppRoutes.privacy.path,

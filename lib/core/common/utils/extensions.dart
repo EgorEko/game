@@ -5,5 +5,5 @@ extension BuildContextHelper on BuildContext {
 
   double get getWidth => MediaQuery.of(this).size.width;
 
-  double get isKeyboardVisible => MediaQuery.of(this).viewInsets.bottom;
+  bool get isKeyboardVisible => MediaQuery.of(this).viewInsets.bottom > 0;
 }
