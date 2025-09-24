@@ -19,27 +19,30 @@ class SwitchingCubit extends Cubit<SwitchingState> {
         ),
       );
 
-  void switchMusic() {
-    final newValue = !state.music;
-    emit(state.copyWith(music: newValue));
-    _settingsService.setMusic(newValue);
+  void switchMusic(bool value) {
+    emit(state.copyWith(music: value));
   }
 
-  void switchSound() {
-    final newValue = !state.sound;
-    emit(state.copyWith(sound: newValue));
-    _settingsService.setSound(newValue);
+  void switchSound(bool value) {
+    emit(state.copyWith(sound: value));
   }
 
-  void switchNotification() {
-    final newValue = !state.notification;
-    emit(state.copyWith(notification: newValue));
-    _settingsService.setNotification(newValue);
+  void switchNotification(bool value) {
+    emit(state.copyWith(notification: value));
   }
 
-  void switchVibration() {
-    final newValue = !state.vibration;
-    emit(state.copyWith(vibration: newValue));
-    _settingsService.setVibration(newValue);
+  void switchVibration(bool value) {
+    emit(state.copyWith(vibration: value));
+  }
+
+  Future<void> save() async {
+    final music = !state.music;
+    final sound = !state.sound;
+    final notification = !state.notification;
+    final vibration = !state.vibration;
+    await _settingsService.setMusic(music);
+    await _settingsService.setSound(sound);
+    await _settingsService.setNotification(notification);
+    await _settingsService.setVibration(vibration);
   }
 }

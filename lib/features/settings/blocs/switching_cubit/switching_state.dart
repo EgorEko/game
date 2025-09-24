@@ -26,7 +26,7 @@ class SwitchingState extends Equatable {
       music: music ?? this.music,
       sound: sound ?? this.sound,
       notification: notification ?? this.notification,
-      vibration: notification ?? this.notification,
+      vibration: vibration ?? this.vibration,
     );
   }
 }

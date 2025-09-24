@@ -24,96 +24,98 @@ class SettingsScreen extends StatelessWidget {
       body: BackgroundWidget(
         asset: Assets.images.backgrounds.backgroundMenu.path,
         child: SafeArea(
-          child: SingleChildScrollView(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 32.h),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      PrimaryButton(
-                        asset: Assets.images.buttons.back.path,
-                        width: 208.w,
-                        height: 208.h,
-                        borderColor: AppColors.borderPrimaryColor,
-                        onPressed: () => context.pop(),
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 32.h),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    PrimaryButton(
+                      asset: Assets.images.buttons.back.path,
+                      width: 208.w,
+                      height: 208.h,
+                      borderColor: AppColors.borderPrimaryColor,
+                      onPressed: () => context.pop(),
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 120.h),
+                  child: Container(
+                    height: context.getHeight * 0.4,
+                    width: context.getWidth * 0.98,
+                    decoration: BoxDecoration(
+                      color: AppColors.transparentObjectColor,
+                      borderRadius: BorderRadius.all(Radius.circular(20.r)),
+                      border: Border.all(
+                        color: AppColors.borderTransparentObjectColor,
+                        width: 5.w,
                       ),
-                    ],
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(vertical: 120.h),
-                    child: Container(
-                      height: context.getHeight * 0.4,
-                      width: context.getWidth * 0.98,
-                      decoration: BoxDecoration(
-                        color: AppColors.transparentObjectColor,
-                        borderRadius: BorderRadius.all(Radius.circular(20.r)),
-                        border: Border.all(
-                          color: AppColors.borderTransparentObjectColor,
-                          width: 5.w,
-                        ),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(vertical: 64.h),
-                        child: BlocBuilder<SwitchingCubit, SwitchingState>(
-                          bloc: cubit,
-                          builder: (context, state) {
-                            return Padding(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: context.getWidth * 0.15,
-                              ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'settings'.toUpperCase(),
-                                    style: AppTextStyles.loadingPrimaryTextStyle
-                                        .copyWith(color: AppColors.white),
-                                  ),
-                                  Spacer(),
-                                  RowWidget(
-                                    title: 'music',
-                                    value: cubit.state.music,
-                                    onChange: (v) => cubit.switchMusic(),
-                                  ),
-                                  Spacer(),
-                                  RowWidget(
-                                    title: 'sound',
-                                    value: cubit.state.sound,
-                                    onChange: (v) => cubit.switchSound(),
-                                  ),
-                                  Spacer(),
-                                  RowWidget(
-                                    title: 'notification',
-                                    value: cubit.state.notification,
-                                    onChange: (v) => cubit.switchNotification(),
-                                  ),
-                                  Spacer(),
-
-                                  RowWidget(
-                                    title: 'vibration',
-                                    value: cubit.state.vibration,
-                                    onChange: (v) => cubit.switchVibration(),
-                                  ),
-                                  Spacer(),
-                                ],
-                              ),
-                            );
-                          },
-                        ),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(vertical: 64.h),
+                      child: BlocBuilder<SwitchingCubit, SwitchingState>(
+                        bloc: cubit,
+                        builder: (context, state) {
+                          return Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: context.getWidth * 0.15,
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'settings'.toUpperCase(),
+                                  style: AppTextStyles.loadingPrimaryTextStyle
+                                      .copyWith(color: AppColors.white),
+                                ),
+                                Spacer(),
+                                RowWidget(
+                                  title: 'music',
+                                  value: cubit.state.music,
+                                  onChange: (v) => cubit.switchMusic(v),
+                                ),
+                                Spacer(),
+                                RowWidget(
+                                  title: 'sound',
+                                  value: cubit.state.sound,
+                                  onChange: (v) => cubit.switchSound(v),
+                                ),
+                                Spacer(),
+                                RowWidget(
+                                  title: 'notification',
+                                  value: cubit.state.notification,
+                                  onChange: (v) => cubit.switchNotification(v),
+                                ),
+                                Spacer(),
+                                RowWidget(
+                                  title: 'vibration',
+                                  value: cubit.state.vibration,
+                                  onChange: (v) => cubit.switchVibration(v),
+                                ),
+                                Spacer(),
+                              ],
+                            ),
+                          );
+                        },
                       ),
                     ),
                   ),
-                  ButtonWidget(
-                    text: 'save',
-                    width: 668.w,
-                    height: 347.h,
-                    style: AppTextStyles.saveButtonTextStyle,
-                    onTap: () {},
-                  ),
-                ],
-              ),
+                ),
+                ButtonWidget(
+                  text: 'save',
+                  width: 668.w,
+                  height: 347.h,
+                  style: AppTextStyles.saveButtonTextStyle,
+                  onTap: () async {
+                    await cubit.save();
+                    if (context.mounted) {
+                      context.pop();
+                    }
+                  },
+                ),
+              ],
             ),
           ),
         ),
