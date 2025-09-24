@@ -89,14 +89,14 @@ class MenuScreen extends StatelessWidget {
                             text: 'privacy\npolicy',
                             style: AppTextStyles.menuPrivacyPolicyTextStyle
                                 .copyWith(color: AppColors.white),
-                            onTap: () {},
+                            onTap: () => context.push(AppRoutes.privacy.path),
                           ),
                           ButtonWidget(
                             text: 'term\nof use',
                             style: AppTextStyles.menuButtonsTextStyle.copyWith(
                               color: AppColors.white,
                             ),
-                            onTap: () {},
+                            onTap: () => context.push(AppRoutes.terms.path),
                           ),
                         ],
                       ),
