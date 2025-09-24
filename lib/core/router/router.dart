@@ -81,7 +81,20 @@ final GoRouter appRouter = GoRouter(
     ),
     GoRoute(
       path: AppRoutes.game.path,
-      builder: (context, state) => const GameScreen(),
+      pageBuilder: (context, state) {
+        return CustomTransitionPage<void>(
+          key: state.pageKey,
+          child: const GameScreen(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            const begin = Offset(1.0, 0.0);
+            const end = Offset.zero;
+            final tween = Tween(begin: begin, end: end);
+            final offsetAnimation = animation.drive(tween);
+
+            return SlideTransition(position: offsetAnimation, child: child);
+          },
+        );
+      },
     ),
     GoRoute(
       path: AppRoutes.alert.path,

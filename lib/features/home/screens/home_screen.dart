@@ -45,7 +45,12 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                     Padding(
-                      padding: EdgeInsets.only(left: 100.w, top: 140.h),
+                      padding: EdgeInsets.only(
+                        left: context.getWidth * 0.09,
+                        top: context.getHeight < 700
+                            ? context.getHeight * 0.04
+                            : context.getHeight * 0.1,
+                      ),
                       child: Image.asset(
                         width: context.getWidth * 0.8,
                         Assets.images.chickens.chickenPrimary.path,
