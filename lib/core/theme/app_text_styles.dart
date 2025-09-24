@@ -28,4 +28,23 @@ abstract class AppTextStyles {
     fontSize: 25.sp,
     letterSpacing: 0,
   );
+
+  static TextStyle menuButtonsTextStyle = GoogleFonts.rubikMonoOne(
+    color: AppColors.white,
+    fontWeight: FontWeight.w400,
+    fontSize: 45.sp,
+    letterSpacing: 0,
+  );
+  static TextStyle menuLeaderboardTextStyle = GoogleFonts.rubikMonoOne(
+    color: AppColors.white,
+    fontWeight: FontWeight.w400,
+    fontSize: 30.sp,
+    letterSpacing: 0,
+  );
+  static TextStyle menuPrivacyPolicyTextStyle = GoogleFonts.rubikMonoOne(
+    color: AppColors.white,
+    fontWeight: FontWeight.w400,
+    fontSize: 40.sp,
+    letterSpacing: 0,
+  );
 }

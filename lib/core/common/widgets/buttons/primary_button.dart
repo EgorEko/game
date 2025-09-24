@@ -21,7 +21,7 @@ class PrimaryButton extends StatelessWidget {
     return SizedBox(
       width: width,
       height: height,
-      child: IconButton(onPressed: () => onPressed(), icon: Image.asset(asset)),
+      child: IconButton(onPressed: onPressed, icon: Image.asset(asset)),
     );
   }
 }

@@ -9,6 +9,7 @@ import '../../features/level/screens/level_screen.dart';
 import '../../features/menu/screens/menu_screen.dart';
 import '../../features/mode/screens/mode_screen.dart';
 import '../../features/privacy/screens/privacy_policy_screen.dart';
+import '../../features/profile/screens/profile_screen.dart';
 import '../../features/settings/screens/settings_screen.dart';
 import '../../features/terms/screens/terms_of_use_screen.dart';
 import '../../features/welcome/screens/welcome_screen.dart';
@@ -58,6 +59,10 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
       path: AppRoutes.terms.path,
       builder: (context, state) => const TermsOfUseScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.profile.path,
+      builder: (context, state) => const ProfileScreen(),
     ),
     GoRoute(
       path: AppRoutes.settings.path,

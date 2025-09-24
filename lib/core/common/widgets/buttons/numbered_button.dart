@@ -29,7 +29,7 @@ class NumberedButton extends StatelessWidget {
       child: Stack(
         alignment: Alignment.center,
         children: [
-          IconButton(onPressed: () => onPressed(), icon: Image.asset(asset)),
+          IconButton(onPressed: onPressed, icon: Image.asset(asset)),
           Text(
             title,
             style: AppTextStyles.loadingPrimaryTextStyle.copyWith(

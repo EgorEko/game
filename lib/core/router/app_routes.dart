@@ -3,6 +3,7 @@ enum AppRoutes {
   home(path: '/home'),
   privacy(path: '/privacy'),
   terms(path: '/terms'),
+  profile(path: '/profile'),
   settings(path: '/settings'),
   menu(path: '/menu'),
   instruction(path: '/instruction'),
