@@ -47,4 +47,10 @@ abstract class AppTextStyles {
     fontSize: 40.sp,
     letterSpacing: 0,
   );
+  static TextStyle bottomSheetTextStyle = GoogleFonts.rubikMonoOne(
+    color: AppColors.white,
+    fontWeight: FontWeight.w400,
+    fontSize: 37.5.sp,
+    letterSpacing: 0,
+  );
 }
