@@ -53,4 +53,10 @@ abstract class AppTextStyles {
     fontSize: 37.5.sp,
     letterSpacing: 0,
   );
+  static TextStyle saveButtonTextStyle = GoogleFonts.rubikMonoOne(
+    color: AppColors.white,
+    fontWeight: FontWeight.w400,
+    fontSize: 140.sp,
+    letterSpacing: 0,
+  );
 }

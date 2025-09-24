@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../core/common/widgets/buttons/primary_button.dart';
-import '../../../core/theme/app_colors.dart';
-import '../../../gen/assets.gen.dart';
+import 'primary_button.dart';
+import '../../../theme/app_colors.dart';
+import '../../../../gen/assets.gen.dart';
 
 class ButtonWidget extends StatelessWidget {
   const ButtonWidget({
@@ -11,11 +11,15 @@ class ButtonWidget extends StatelessWidget {
     required this.text,
     required this.style,
     required this.onTap,
+    required this.width,
+    required this.height,
   });
 
   final String text;
   final TextStyle style;
   final VoidCallback onTap;
+  final double width;
+  final double height;
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +30,8 @@ class ButtonWidget extends StatelessWidget {
         children: [
           PrimaryButton(
             asset: Assets.images.buttons.primaryButton.path,
-            width: 400.w,
-            height: 182.h,
+            width: width,
+            height: height,
             borderColor: AppColors.borderSecondaryColor,
             onPressed: () {},
           ),

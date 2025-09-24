@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import '../../../core/common/utils/extensions.dart';
 import '../../../core/common/utils/utils.dart';
 import '../../../core/common/widgets/background_widget.dart';
+import '../../../core/common/widgets/buttons/button_widget.dart';
 import '../../../core/common/widgets/buttons/primary_button.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_text_styles.dart';
@@ -47,10 +48,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ],
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: 50.h),
+                    padding: EdgeInsets.symmetric(vertical: 10.h),
                     child: Container(
-                      height: context.getHeight * 0.7,
-                      width: context.getWidth * 0.865,
+                      height: context.getHeight * 0.55,
+                      width: context.getWidth * 0.8,
                       decoration: BoxDecoration(
                         color: AppColors.transparentObjectColor,
                         borderRadius: BorderRadius.all(Radius.circular(20.r)),
@@ -139,6 +140,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                       ),
                     ),
+                  ),
+                  ButtonWidget(
+                    text: 'save',
+                    width: 668.w,
+                    height: 347.h,
+                    style: AppTextStyles.saveButtonTextStyle,
+                    onTap: () {},
                   ),
                 ],
               ),

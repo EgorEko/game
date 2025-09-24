@@ -6,6 +6,8 @@ import 'core/di/di.dart';
 import 'game_app.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
   configureDependencies();
 
   getIt<LoadingCubit>().startAnimation();

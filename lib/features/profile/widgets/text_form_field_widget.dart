@@ -33,7 +33,6 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
     final focus = FocusScope.of(context);
     return SizedBox(
       width: 610.w,
-      height: 105.h,
       child: TextFormField(
         controller: widget.controller,
         obscureText: widget.obscureText,
@@ -48,6 +47,7 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
         },
         keyboardType: widget.keyboardType,
         decoration: InputDecoration(
+          contentPadding: EdgeInsets.only(left: 20.w, right: 20.w, top: 20.h),
           hintText: widget.hintText.toUpperCase(),
           hintStyle: AppTextStyles.menuButtonsTextStyle,
           filled: true,

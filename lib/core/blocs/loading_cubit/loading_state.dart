@@ -8,7 +8,7 @@ class LoadingState extends Equatable {
   final int? percent;
 
   @override
-  List<Object?> get props => [progress, percent];
+  List<Object?> get props => [isLoading, progress, percent];
 
   LoadingState copyWith({double? progress, int? percent, bool? isLoading}) {
     return LoadingState(

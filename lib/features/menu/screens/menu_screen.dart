@@ -10,7 +10,7 @@ import '../../../core/router/app_routes.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../gen/assets.gen.dart';
-import '../../level/widgets/button_widget.dart';
+import '../../../core/common/widgets/buttons/button_widget.dart';
 
 class MenuScreen extends StatelessWidget {
   const MenuScreen({super.key});
@@ -67,6 +67,8 @@ class MenuScreen extends StatelessWidget {
                           SizedBox(height: context.getHeight * 0.05),
                           ButtonWidget(
                             text: 'profile',
+                            width: 400.w,
+                            height: 182.h,
                             style: AppTextStyles.menuButtonsTextStyle.copyWith(
                               color: AppColors.white,
                             ),
@@ -74,25 +76,33 @@ class MenuScreen extends StatelessWidget {
                           ),
                           ButtonWidget(
                             text: 'settings',
+                            width: 400.w,
+                            height: 182.h,
                             style: AppTextStyles.menuButtonsTextStyle.copyWith(
                               color: AppColors.white,
                             ),
-                            onTap: () {},
+                            onTap: () => context.push(AppRoutes.settings.path),
                           ),
                           ButtonWidget(
                             text: 'leaderboard',
+                            width: 400.w,
+                            height: 182.h,
                             style: AppTextStyles.menuLeaderboardTextStyle
                                 .copyWith(color: AppColors.white),
                             onTap: () {},
                           ),
                           ButtonWidget(
                             text: 'privacy\npolicy',
+                            width: 400.w,
+                            height: 182.h,
                             style: AppTextStyles.menuPrivacyPolicyTextStyle
                                 .copyWith(color: AppColors.white),
                             onTap: () => context.push(AppRoutes.privacy.path),
                           ),
                           ButtonWidget(
                             text: 'term\nof use',
+                            width: 400.w,
+                            height: 182.h,
                             style: AppTextStyles.menuButtonsTextStyle.copyWith(
                               color: AppColors.white,
                             ),
