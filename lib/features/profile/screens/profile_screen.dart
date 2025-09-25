@@ -50,7 +50,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 10.h),
                     child: Container(
-                      height: context.getHeight * 0.55,
+                      height: context.getHeight * 0.56,
                       width: context.getWidth * 0.8,
                       decoration: BoxDecoration(
                         color: AppColors.transparentObjectColor,

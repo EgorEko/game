@@ -14,10 +14,13 @@ class BottomSheetWidget extends StatelessWidget {
     return PopScope(
       canPop: false,
       child: Container(
-        constraints: BoxConstraints(maxHeight: context.getHeight * 0.3),
+        constraints: BoxConstraints(maxHeight: context.getHeight * 0.31),
         decoration: BoxDecoration(
           color: AppColors.bottomSheetColor,
-          borderRadius: BorderRadius.all(Radius.circular(64.r)),
+          borderRadius: BorderRadius.only(
+            topRight: Radius.circular(64.r),
+            topLeft: Radius.circular(64.r),
+          ),
         ),
         child: Padding(
           padding: EdgeInsets.symmetric(vertical: 64.h),
@@ -42,6 +45,7 @@ class BottomSheetWidget extends StatelessWidget {
                   borderRadius: BorderRadius.all(Radius.circular(20.r)),
                 ),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Spacer(),
                     Text(

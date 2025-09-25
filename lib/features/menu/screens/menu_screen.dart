@@ -54,7 +54,7 @@ class MenuScreen extends StatelessWidget {
                     child: Padding(
                       padding: EdgeInsets.symmetric(
                         horizontal: 110.w,
-                        vertical: 100.h,
+                        vertical: context.getHeight * 0.01,
                       ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -64,11 +64,11 @@ class MenuScreen extends StatelessWidget {
                             style: AppTextStyles.loadingPrimaryTextStyle
                                 .copyWith(color: AppColors.white),
                           ),
-                          SizedBox(height: context.getHeight * 0.05),
+                          SizedBox(height: context.getHeight * 0.01),
                           ButtonWidget(
                             text: 'profile',
-                            width: 400.w,
-                            height: 182.h,
+                            width: context.getWidth,
+                            height: context.getHeight * 0.12,
                             style: AppTextStyles.menuButtonsTextStyle.copyWith(
                               color: AppColors.white,
                             ),
@@ -76,8 +76,8 @@ class MenuScreen extends StatelessWidget {
                           ),
                           ButtonWidget(
                             text: 'settings',
-                            width: 400.w,
-                            height: 182.h,
+                            width: context.getWidth,
+                            height: context.getHeight * 0.12,
                             style: AppTextStyles.menuButtonsTextStyle.copyWith(
                               color: AppColors.white,
                             ),
@@ -85,8 +85,8 @@ class MenuScreen extends StatelessWidget {
                           ),
                           ButtonWidget(
                             text: 'leaderboard',
-                            width: 400.w,
-                            height: 182.h,
+                            width: context.getWidth,
+                            height: context.getHeight * 0.12,
                             style: AppTextStyles.menuLeaderboardTextStyle
                                 .copyWith(color: AppColors.white),
                             onTap: () =>
@@ -94,16 +94,16 @@ class MenuScreen extends StatelessWidget {
                           ),
                           ButtonWidget(
                             text: 'privacy\npolicy',
-                            width: 400.w,
-                            height: 182.h,
+                            width: context.getWidth,
+                            height: context.getHeight * 0.12,
                             style: AppTextStyles.menuPrivacyPolicyTextStyle
                                 .copyWith(color: AppColors.white),
                             onTap: () => context.push(AppRoutes.privacy.path),
                           ),
                           ButtonWidget(
                             text: 'term\nof use',
-                            width: 400.w,
-                            height: 182.h,
+                            width: context.getWidth,
+                            height: context.getHeight * 0.12,
                             style: AppTextStyles.menuButtonsTextStyle.copyWith(
                               color: AppColors.white,
                             ),
