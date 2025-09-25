@@ -89,7 +89,8 @@ class MenuScreen extends StatelessWidget {
                             height: 182.h,
                             style: AppTextStyles.menuLeaderboardTextStyle
                                 .copyWith(color: AppColors.white),
-                            onTap: () {},
+                            onTap: () =>
+                                context.push(AppRoutes.leaderboard.path),
                           ),
                           ButtonWidget(
                             text: 'privacy\npolicy',

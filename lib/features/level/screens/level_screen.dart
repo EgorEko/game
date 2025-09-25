@@ -60,7 +60,9 @@ class LevelScreen extends StatelessWidget {
                           width: 270.w,
                           height: 274.h,
                           borderColor: Colors.transparent,
-                          onPressed: () => context.push(AppRoutes.game.path),
+                          onPressed: () {
+                            context.push(AppRoutes.game.path);
+                          },
                         ),
                       );
                     }),

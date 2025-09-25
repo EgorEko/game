@@ -5,6 +5,7 @@ enum AppRoutes {
   terms(path: '/terms'),
   profile(path: '/profile'),
   settings(path: '/settings'),
+  leaderboard(path: '/leaderboard'),
   menu(path: '/menu'),
   instruction(path: '/instruction'),
   level(path: '/level'),
